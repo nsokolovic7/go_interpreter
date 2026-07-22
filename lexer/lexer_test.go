@@ -2,17 +2,17 @@
 
 package lexer
 
-import {
-	"testing"
+import (
 	"go_interpreter/token"
-}
+	"testing"
+)
 
-func TestNextToken(t *testing.T){
+func TestNextToken(t *testing.T) {
 	input := `=+(){},;`
 
-	tests := []struct{
-		expectedType	token.TokenType
-		expectedLiteral	string
+	tests := []struct {
+		expectedType    token.TokenType
+		expectedLiteral string
 	}{
 		{token.ASSIGN, "="},
 		{token.PLUS, "+"},
@@ -26,14 +26,14 @@ func TestNextToken(t *testing.T){
 	}
 
 	l := New(input)
-	for i, tt := range tests{
+	for i, tt := range tests {
 		tok := l.NextToken()
 
-		if tok.Type != tt.expectedType{
+		if tok.Type != tt.expectedType {
 			t.Fatalf("tests[%d] - tokentype wrong. expected=%q, got=%q", i, tt.expectedType, tok.Type)
 		}
 
-		if tok.Literal != tt.expectedLiteral{
+		if tok.Literal != tt.expectedLiteral {
 			t.Fatalf("tests[%d] - literal wrong. expected=%q, got=%q", i, tt.expectedLiteral, tok.Literal)
 		}
 	}

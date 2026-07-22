@@ -9,20 +9,20 @@ type Token struct {
 	Literal string
 }
 
-const {
+const (
 	ILLEGAL = "ILLEGAL"
-	EOF = "EOF"
+	EOF     = "EOF"
 
 	// Identifiers + literals
 	IDENT = "IDENT" // Variable names
-	INT = "INT" // data type (1, 2, 3 ...)
+	INT   = "INT"   // data type (1, 2, 3 ...)
 
 	// Operators
 	ASSIGN = "="
-	PLUS = "+"
+	PLUS   = "+"
 
 	// Delimiters
-	COMMA = ","
+	COMMA     = ","
 	SEMICOLON = ";"
 
 	LPAREN = "("
@@ -32,5 +32,5 @@ const {
 
 	// Keywords
 	FUNCTION = "FUNCTION"
-	LET = "LET"
-}
+	LET      = "LET"
+)
